@@ -1,2 +1,2 @@
 # lamarca
-Sitio informativo
+Sitio informativo sobre empresa
