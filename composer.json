@@ -1,0 +1,9 @@
+{
+    "require": {
+        "silex/silex": "~2.0",
+        "twig/twig": "^1.34",
+        "symfony/asset": "^3.3",
+        "symfony/twig-bridge": "^3.3",
+        "doctrine/dbal": "~2.2"
+    }
+}

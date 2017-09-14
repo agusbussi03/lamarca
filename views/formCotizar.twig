@@ -1,0 +1,310 @@
+<div id="quote-popup">
+
+    <div id="quote-popup-background">
+    </div>
+
+    <div id="quote-popup-content" class="animated speed">
+        <div id="quote-popup-close"><i class="fa fa-times"></i></div>
+        <ul id="quote-popup-tabs">
+            <li data-quote-tab-for="car-insurance">Seguro del Automotor</li>
+            <li data-quote-tab-for="house-insurance">Seguro del hogar</li>
+            <li data-quote-tab-for="ap">Accidentes Personales</li>
+        </ul>
+
+
+
+        <!--
+        car insurance
+        -->
+        <div class="quote-form" data-quote-form-for="car-insurance">
+
+            <i class="fa fa-car background-icon"></i>
+
+            <div class="quote-form-background" style="background-image: url( '/lamarca/web/_assets/_img/in-the-car.jpg' )">
+            </div>
+
+            <div class="quote-form-content">
+
+                <h2>Cotizar online <span>Seguro Automotor</span></h2>
+                <div class="form">
+
+                    <h4>Detalles para Contacto:</h4>
+                    <input type="text" class="quote-form-element quote-form-client-name" name="NombreApellido" placeholder="Nombre y Apellido..." />
+                    <input type="text" name="Phone Number" placeholder="Teléfono..." class="quote-form-element last"  />
+
+                    <span class="custom-dropdown">
+
+                        <select name="Provincia" id=provincias class="custom-dropdown-select quote-form-element">
+
+                            <option value="-" >Provincia</option>
+                            {% for i in provincias %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+
+                        </select>
+                    </span>
+                    <input type="text" name="localidad" placeholder="Localidad" class="quote-form-element last" />
+                    <input type="text" name="E-mail Address" id=email placeholder="E-mail..." class="quote-form-element quote-form-client-email" />
+
+                    <h4>Su auto:</h4>
+
+                    <span class="custom-dropdown">
+                        <select name="SelectMarcas" id=marcasautos class="custom-dropdown-select quote-form-element">
+                            <option value="-">Marca</option>
+                            {% for i in marcas %}
+                                <option value="{{i.codigo}}">{{i.marca}}</option>
+                            {% endfor %}
+                        </select>
+                    </span>
+                    <span class="custom-dropdown-last">
+                        <select name="Año" id=anio class="custom-dropdown-select quote-form-element last"  style="width:100px;">
+                            <option value="-">Año</option>
+                            {% for i in 2017..1960 %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </span>
+
+                    <span class="custom-dropdown">
+                        <select name="ModeloAuto" id=modelosautos class="custom-dropdown-select quote-form-element ">
+                        </select>
+                    </span>
+                        
+                      <select name="Cobertura" id=cobertura class="custom-dropdown-select quote-form-element last" style="width:200px;">
+
+                        <option value="-" selected>Cobertura Deseada</option>
+                        <option value="RespCivil">Responsabilidad Civil</option>
+                        <option value="Terceros">Terceros</option>
+                        <option value="3erosPremium">Terceros Premium</option>
+                        <option value="TodoRiesgo">Todo Riesgo</option>
+                        <option value="otra">otra</option>
+
+                    </select>
+                    <span class="custom-dropdown">
+                        <select name="VersionAuto" id=versionesautos class="custom-dropdown-select quote-form-element">
+                        </select>
+                    </span>    
+        
+
+                    <button class="button button-navy-blue send-quote" type="button">Cotizar <i class="fa fa-paper-plane-o"></i></button>
+
+                    <div class="quote-form-thanks">
+
+                        <div class="quote-form-thanks-content">
+
+                            Su solicitud de cotización ha sido enviada satisfactoriamente 
+                            <span class="quote-form-thanks-close">Cerrar.</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--
+        life insurance
+        -->
+        <div class="quote-form" data-quote-form-for="ap">
+
+            <i class="fa fa-umbrella background-icon"></i>
+
+            <div class="quote-form-background" style="background-image: url( '/lamarca/web/_assets/_img/bkground3.jpg' )">
+            </div>
+
+            <div class="quote-form-content">
+
+                <h2>Cotización  <span>Accidentes Personales </span></h2>
+                <div class="form">
+
+                    <!--<h4>Nivel de Protección: <span class="slider-value quote-form-element" data-name="Level of protection" data-slider-id="life-protection-level">$<span></span></span></h4>
+                    <div class="slider" data-slider-min="10000" data-slider-max="1000000" data-slider-start="200000" data-slider-step="10000" data-slider-id="life-protection-level"></div>
+                    -->
+
+                    <h4>Datos del Tomador</h4>
+                    <input type="text" class="quote-form-element quote-form-client-name" name="nombreyApell" placeholder="Nombre Completo..." />
+
+                    <!-- <span class="custom-dropdown last">
+ 
+                         <select name="Age" class="custom-dropdown-select quote-form-element">
+ 
+                             <option value="-">Edad</option>
+                    {% for i in 18..99 %}
+                        <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+
+                </select>
+
+            </span>
+                    -->
+
+                    <input type="text" name="tel" placeholder="Telefono..." class="quote-form-element last" />
+                    <input type="text" name="email" id=email placeholder="E-mail..." class="quote-form-element quote-form-client-email" />
+
+                    <h4>Datos del Asegurado</h4>
+
+                    <input type="text" name="actividad" placeholder="Actividad a Asegurar..." class="quote-form-element" />
+
+                    <span class="custom-dropdown last">
+
+                        <select name="dias" class="custom-dropdown-select quote-form-element">
+
+                            <option value="-">Dias de Cobertura</option>
+                            {% for i in 2..365 %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+
+                        </select>
+
+                    </span>
+
+                    <select name="CoberAP" class="custom-dropdown-select quote-form-element">
+
+                        <option value="-" selected>Tipo de Cobertura</option>
+                        <option value="RespCivil">Muerte e Incapacidad</option>
+                        <option value="Terceros">Gastos médicos</option>
+                        <option value="3erosPremium">Farmacia</option>
+                        <option value="TodoRiesgo">Sepelio</option>
+                        <option value="otra">otra</option>
+
+                    </select>
+                    <!--<div class="checkbox quote-form-element" data-checked="yes" data-name="Have you used tobacco or nicotine products in the last 12 months?">
+  
+                          <span class="checkbox-status"><i class="fa fa-check"></i></span>
+                          <span class="checkbox-values">
+  
+                              <span class="checkbox-value-checked">Si</span>
+                              <span class="checkbox-value-unchecked">No</span>
+  
+                          </span>
+  
+                      </div>    -->
+
+                    <button class="button button-navy-blue send-quote" type="button">Cotizar<i class="fa fa-paper-plane-o"></i></button>
+
+                    <div class="quote-form-thanks">
+
+                        <div class="quote-form-thanks-content">
+
+                            Su solicitud ha sido enviada correctamente 
+                            <span class="quote-form-thanks-close">Cerrar</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--
+        house insurance
+        -->
+        <div class="quote-form" data-quote-form-for="house-insurance">
+
+            <i class="fa fa-home background-icon"></i>
+
+            <div class="quote-form-background" style="background-image: url( '/lamarca/web/_assets/_img/hogares.jpg' )">
+            </div>
+
+            <div class="quote-form-content">
+
+                <h2>Cotización <span>Seguro del Hogar</span></h2>
+                <div class="form">
+
+                    <h4>Datos de su hogar</h4>
+                    <span class="custom-dropdown">
+
+                        <select name="tipoProp" id=tipoProd class="custom-dropdown-select quote-form-element">
+
+                            <option value="-">Tipo de Propiedad:</option>
+                            <option value="House">Casa</option>
+                            <option value="Flat / Apartment">Departamento</option>
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Town house">Casa Quinta</option>
+                            <option value="Other">otra</option>
+
+                        </select>
+
+                    </span>
+
+                    <span class="custom-dropdown last">
+
+                        <select name="Barrio" id=barrio class="custom-dropdown-select quote-form-element">
+
+                            <option value="-">Barrio en que se encuentra...</option>
+                            <option value="1">Candioti</option>
+                            <option value="2">Guadalupe</option>
+                            <option value="3">Villa Maria Selva</option>
+                            <option value="4">Fomento 9 de julio</option>
+                            <option value="5">otro</option>
+
+                        </select>
+
+                    </span>
+                    
+                     <h5>Protección incendio edificio: <span class="slider-value quote-form-element" data-name="Level of protection" data-slider-id="life-protection-level">$<span></span></span></h5>
+                    <div class="slider" data-slider-min="100000" data-slider-max="2000000" data-slider-start="200000" data-slider-step="10000" data-slider-id="life-protection-level"></div>
+                  
+                    <h5>Responsabilidad civil: <span class="slider-value quote-form-element" data-name="civil" data-slider-id="civil">$<span></span></span></h5>
+                    <div class="slider" data-slider-min="150000" data-slider-max="500000" data-slider-start="200000" data-slider-step="1000" data-slider-id="civil"></div>
+                  
+                    <h5>Protección Electrodomésticos <span class="slider-value quote-form-element" data-name="ProteccionElectrodom" data-slider-id="electrodomesticos">$<span></span></span></h5>
+                    <div class="slider" data-slider-min="1000" data-slider-max="30000" data-slider-start="4000" data-slider-step="1000" data-slider-id="electrodomesticos"></div>
+                    <div>
+                        <input type="checkbox" name="cob" value="1">
+                        <span style="font-size:13px;margin-right:50px;margin-left: 10px"> Accidentes Personales - Muerte</span>
+                          <input type="checkbox" name="cob" value="2" >
+                          <span style="font-size:13px;margin-right:50px;margin-left: 10px">Robo / Hurto mobiliario familiar</span>
+                    </div>
+
+                    <h4>Su contacto</h4>
+                    <input type="text" class="quote-form-element quote-form-client-name" name="Full name" placeholder="Nombre y Apellido..." />
+
+                    <span class="custom-dropdown last">
+
+                        <select name="Age" class="custom-dropdown-select quote-form-element">
+
+                            <option value="-"> Edad</option>
+                            {% for i in 18..99 %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+
+                        </select>
+
+                    </span>
+
+                    <input type="text" name="Phone Number" placeholder="Teléfono..." class="quote-form-element" />
+                    <input type="text" name="E-mail Address" placeholder="E-mail..." class="quote-form-element quote-form-client-email last" />
+
+                    <button class="button button-navy-blue send-quote" type="button">Cotizar <i class="fa fa-paper-plane-o"></i></button>
+
+                    <div class="quote-form-thanks">
+
+                        <div class="quote-form-thanks-content">
+
+                            Su solicitud de cotización ha sido enviada correctamente
+                            <span class="quote-form-thanks-close">Cerrar<span>
+
+                                    </div>
+
+                                    </div>
+
+                                    </div>
+
+                                    </div>
+
+                                    </div>
+
+                                    </div>
+
+                                    </div>
+
+
+
+
